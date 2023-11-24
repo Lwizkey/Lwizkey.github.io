@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Récap prgrammation Web</title>
+    </head>
+
+    <body>
+
+        <h1>Différents types de liste</h1>
+
+            <h2>Liste ordonnée</h2>
+            <ol>
+                <li>Premier élément</li>
+                <li>Deuxième élément</li>
+            </ol>
+            
+            <h2>Liste à puce</h2>
+            <ul>
+                <li>Premier élément</li>
+                <li>Deuxième élément</li>
+            </ul>
+
+        <h1>Pour insérer des liens ou des images</h1>
+
+        <a href="URL">Pour insérer des liens</a>
+        <img src="URL" ou chemin depuis lendroit du ficher> Pour insérer des images
+        décrire les images avec alt="", redimensionner avec lenght= et widht=
+
+        <h2>Liste de définition</h2>
+        <dl>
+            <dt><a href="https://www.twitch.tv/" target="-blank">Twitch</a></dt>
+            <dd>Pour les jeux vidéos</dd>
+            <dt><a href="https://www.youtube.com/" target="-blank">Youtube</a></dt>
+            <dd>Pour des vidéos en tout genre</dd>
+            <dt><a href="https://netflix.com/" target="-blank">Netflix</a></dt>
+            <dd>Pour les séries et les films</dd>
+            <dt><a href="https://primevideo.com/" target="-blank">PrimeVideo</a></dt>
+            <dd>Pour d'autres séries et films</dd>
+        </dl>
+
+        <h2>A partir du disque</h2>
+            <table>
+                    <tr> *creer une ligne*
+                        <th>Prénom</th> *creer une colonne avec son titre*
+                        <th>Nom</th>
+                        <th>Photo</th>
+                    </tr>
+                    <tr>
+                        <td>Denis</td> *remplir la première colonne*
+                        <td>Ritchie</td>
+                        <td><img src="IMG/DenisRitchie.jpg" alt="Portait de Denis Ritchie" height="200px" width="150px"/></td>                        
+                    </tr>
+                    <tr>
+                        <td>Linus</td>
+                        <td>Torvalds</td>
+                        <td><img src="IMG/LinusTorvalds.jpg" alt="Portrait de Linus Torvalds" height="200px" width="150px"/></td>
+                    </tr>
+                    <tr>
+                        <td>Blaise</td>
+                        <td>Pascal</td>
+                        <td><img src="IMG/BlaisePascal.JPG" alt="Portait de Blaise Pascal" height="200px" width="150px"/></td>
+                    </tr>
+                    <tr>
+                        <td>Alan</td>
+                        <td>Turing</td>
+                        <td><img src="IMG/AlanTuring.jpg" alt="Portait d'Alan Turing" height="200px" width="150px"/></td>
+                    </tr>
+            </table>
+
+       <h2>Formulaire d'inscription</h2>
+
+            <form action="/submit_form" method="post">
+                <fieldset>
+                    <legend>Informations personnelles:</legend>
+
+                    <label for="nom">Nom:</label><br>
+                    <input type="text" id="nom" name="nom" required><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="mdp">Mot de passe:</label><br>
+                    <input type="password" id="mdp" name="mdp" minlength="6" required><br>
+
+                    <label for="age">Age:</label><br>
+                    <input type="number" id="age" name="age"><br>
+
+                    <label>Sexe:</label><br>
+                    <input type="radio" id="feminin" name="sexe" value="feminin">
+                    <label for="feminin">Féminin</label><br>
+                    <input type="radio" id="masculin" name="sexe" value="masculin">
+                    <label for="masculin">Masculin</label><br>
+
+                    <label for="bio">Biographie:</label><br>
+                    <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br>
+
+                    <input type="checkbox" id="newsletter" name="newsletter" value="oui">
+                    <label for="newsletter">S'abonner à la newsletter</label><br>
+
+                    <button type="submit">S'inscrire</button>
+                </fieldset>
+            </form>
+
+### Explications :
+
+- **`<fieldset>` et `<legend>`** : Utilisés pour grouper les éléments du formulaire et ajouter un titre à ce groupe.
+- **`<label>`** : Fournit des étiquettes textuelles pour chaque champ de formulaire pour une meilleure accessibilité.
+- **`<input>`** : Différents types d'`input` sont utilisés ici, y compris `text`, `email`, `password`, `number`, `radio`, et `checkbox`.
+- **`<textarea>`** : Permet aux utilisateurs d'entrer un texte multi-lignes.
+- **`<button>`** : Un bouton pour soumettre le formulaire.
+
+    
+    ## Fondamentaux de CSS
+
+    ### 1. Syntaxe
+    
+    - **Sélecteurs** : Identifient l'élément HTML à styliser. Exemples : `p`, `.classe`, `#id`.
+    - **Déclarations** : Paire propriété-valeur pour styliser le sélecteur. Exemple : `color: red;`.
+    - **Règles** : Sélecteur suivi d'une ou plusieurs déclarations entourées de `{}`.
+    
+      ```css
+      p {
+        color: red;
+        font-size: 14px;
+      }
+      ```
+    ```css
+    h1 {
+        color: blue;
+        font-size: 20px;
+    }
+    ```
+    
+    
+    ### 2. Ajout de CSS à HTML
+    
+    - **Interne** : Utiliser `<style>` dans l'en-tête `<head>` du document HTML.
+    - **Externe** : Lier un fichier CSS externe avec `<link rel="stylesheet" href="style.css">`.
+    - **Inline** : Style directement dans un attribut `style` d'un élément HTML.
+    
+    ```html
+    <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+    ```
+    
+    ```html
+    <link rel="stylesheet" href="styles.css">
+    ```
+    
+    ```html
+    <p style="color: green;">Ceci est un paragraphe avec un style inline.</p>
+    ```
+    
+    ### 3. Sélecteurs
+    
+    - **Sélecteur d'élément** : Cible le nom de l'élément, ex : `p`, `div`.
+    - **Sélecteur de classe** : Cible la classe de l'élément, ex : `.ma-classe`.
+    - **Sélecteur d'ID** : Cible l'ID de l'élément, ex : `#mon-id`.
+    - **Sélecteurs avancés** : Combinateurs, pseudo-classes, pseudo-éléments, etc.
+    
+    ```css
+    p {
+        font-size: 16px;
+    }
+    ```
+    
+    ```css
+    .ma-classe {
+        color: red;
+    }
+    ```
+    
+    ```css
+    #mon-id {
+        background-color: yellow;
+    }
+    ```
+
+    </body>
+
+
+
+
+
+</html>
